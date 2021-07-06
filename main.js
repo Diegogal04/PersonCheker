@@ -16,19 +16,23 @@ function catchData() {
     let userProfilePic = document.getElementById("pp-link").value;
     let user = [userName, userLastName, userAge, userProfilePic];
     console.log(user);
+
+    function addNewPerson() {
+        for(let i = 0; i <= user.length; i++) {
+            const newInfoDiv = document.createElement('div');
+            newInfoDiv.classList.add('div-person');
+            personContainer.appendChild(newInfoDiv);
+        }
+    }
+    addNewPerson();
 };
 
-function addNewPerson() {
-    const newPerson = document.createElement('div');
-    newPerson.classList.add('div-person');
-    personContainer.appendChild(newPerson);
-};
+
 
 
 btnAdd.addEventListener('click', toglleModal);
 btnClose.addEventListener('click', toglleModal);
 submitBtn.addEventListener('click', () => {
-    addNewPerson();
     catchData();
     toglleModal();
 });
@@ -37,3 +41,6 @@ submitBtn.addEventListener('click', () => {
 
 
 
+/* const newPerson = document.createElement('div');
+newPerson.classList.add('div-person');
+personContainer.appendChild(newPerson); */
