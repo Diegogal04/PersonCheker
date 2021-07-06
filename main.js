@@ -9,30 +9,31 @@ function toglleModal() {
     modal.classList.toggle('hidden');
 };
 
+function catchData() {
+    let userName = document.getElementById("name").value;
+    let userLastName = document.getElementById("lastname").value;
+    let userAge = document.getElementById("age").value;
+    let userProfilePic = document.getElementById("pp-link").value;
+    let user = [userName, userLastName, userAge, userProfilePic];
+    console.log(user);
+};
+
 function addNewPerson() {
     const newPerson = document.createElement('div');
     newPerson.classList.add('div-person');
     personContainer.appendChild(newPerson);
-    console.log('hello world')
-}
+};
 
 
 btnAdd.addEventListener('click', toglleModal);
 btnClose.addEventListener('click', toglleModal);
-submitBtn.addEventListener('click', addNewPerson);
+submitBtn.addEventListener('click', () => {
+    addNewPerson();
+    catchData();
+    toglleModal();
+});
 
 
 
 
 
-
-/* const btnAdd = document.getElementById("add-btn");
-const personContainer = document.getElementById("div-container");
-
-function addNew() {
-    const newDiv = document.createElement('div');
-    newDiv.classList.add('div-person');
-    personContainer.appendChild(newDiv)
-}
-
-btnAdd.addEventListener('click', addNew); */
