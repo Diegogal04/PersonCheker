@@ -18,10 +18,35 @@ function catchData() {
     console.log(user);
 
     function addNewPerson() {
+    const userContainerDiv = document.createElement('div');
+    userContainerDiv.classList.add('user-container-div');
+    const userNameh1 = document.createElement('div');
+    userNameh1.classList.add('user-name-h1');
+    userNameh1.innerHTML = userName;
+    const userLastNameh2 = document.createElement('div');
+    userLastNameh2.classList.add('user-last-name-h2');
+    userLastNameh2.innerHTML = userLastName;
+    const userAgeh3 = document.createElement('div');
+    userAgeh3.classList.add('user-age-h3');
+    userAgeh3.innerHTML = userAge;
+    const userProfileImg = document.createElement('img');
+    userProfileImg.classList.add('user-profile-img');
+    userProfileImg.src = userProfilePic;
+
+
+
         for(let i = 0; i <= user.length; i++) {
-            const newInfoDiv = document.createElement('div');
-            newInfoDiv.classList.add('div-person');
-            personContainer.appendChild(newInfoDiv);
+            if(i === 0) {
+                personContainer.appendChild(userContainerDiv);
+            } else if (i === 1) {
+                userContainerDiv.appendChild(userNameh1);
+            } else if (i === 2) {
+                userContainerDiv.appendChild(userLastNameh2)
+            } else if (i === 3) {
+                userContainerDiv.appendChild(userAgeh3);
+            } else if(i === 4) {
+                userContainerDiv.appendChild(userProfileImg);
+            }
         }
     }
     addNewPerson();
