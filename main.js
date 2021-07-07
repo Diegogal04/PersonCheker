@@ -28,7 +28,7 @@ function catchData() {
     userLastNameh2.innerHTML = userLastName;
     const userAgeh3 = document.createElement('div');
     userAgeh3.classList.add('user-age-h3');
-    userAgeh3.innerHTML = userAge;
+    userAgeh3.innerHTML = 'Edad:' + userAge;
     const userProfileImg = document.createElement('img');
     userProfileImg.classList.add('user-profile-img');
     userProfileImg.src = userProfilePic;
