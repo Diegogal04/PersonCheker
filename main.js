@@ -66,6 +66,4 @@ submitBtn.addEventListener('click', () => {
 
 
 
-/* const newPerson = document.createElement('div');
-newPerson.classList.add('div-person');
-personContainer.appendChild(newPerson); */
+
